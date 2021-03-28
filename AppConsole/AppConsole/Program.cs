@@ -30,40 +30,45 @@ namespace AppConsole {
 
                 int s = 0;
 
-                if (opcao == 1) ;{
-                    if (s != 9) {
-                        Console.WriteLine("Para continuar aperte enter, se quiser voltar aperte 9");
-                        s = int.Parse(Console.ReadLine());
-                        Investimento p = new Investimento();
-                        Console.Clear();
-                        Console.WriteLine("Você digitou a opção:" + opcao);
-                        Console.WriteLine("Digite o nome do ativo");
-                        p.Nome = Console.ReadLine();
-                        Console.WriteLine("Quantos deseja comprar?");
-                        p.Qte = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Qual valor unitário?");
-                        p.VUnit = double.Parse(Console.ReadLine());
-                        p.DtHr = Convert.ToString(DateTime.Now);
+                if (opcao == 1) 
+                {
+                    Investimento p = new Investimento();
+                    Console.Clear();
+                    Console.WriteLine("Você digitou a opção:" + opcao);
+                    Console.WriteLine("Digite o nome do ativo");
+                    p.Nome = Console.ReadLine();
+                    Console.WriteLine("Quantos deseja comprar?");
+                    p.Qte = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Qual valor unitário?");
+                    p.VUnit = double.Parse(Console.ReadLine());
+                    p.DtHr = Convert.ToString(DateTime.Now);
 
-                        Console.WriteLine("Confirme as informações:");
-                        Console.WriteLine("Nome:"
-                                          + p.Nome
-                                          + "Quantidade:"
-                                          + p.Qte
-                                          + "Valor Unitário:"
-                                          + p.VUnit
-                                          + "Valor Total ="
-                                          + p.Qte * p.VUnit);
+                    Console.WriteLine("Confirme as informações:");
+                    Console.WriteLine("Nome:"
+                                      + p.Nome
+                                      + "Quantidade:"
+                                      + p.Qte
+                                      + "Valor Unitário:"
+                                      + p.VUnit
+                                      + "Valor Total ="
+                                      + p.Qte * p.VUnit);
+                }
+
+                
+                else if (opcao == 2) {
+                    Console.WriteLine("Veja seu extrato a seguir:");
+
+                    foreach (Investimento p in list ) {
+                        Console.WriteLine("Nome:" + p.Nome + "; Quantidade:" + p.Qte + "; Valor Unitário: R$" + p.VUnit + ";Total: R$" + p.VTotal + "|" + p.DtHr);
                     }
-                    else ;
-                    {
-                    };
-                
-                
-                };
-            
+
+                    Console.WriteLine("Para voltar ao menu anterior tecle Enter");
+                    Console.ReadLine();
+                }
+
+
             }
-            
+
         }
     }
 }
