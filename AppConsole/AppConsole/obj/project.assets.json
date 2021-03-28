@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\AppConsole\\AppConsole\\AppConsole.csproj",
+      "projectUniqueName": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\DESAFIO\\AppConsole\\AppConsole\\AppConsole.csproj",
       "projectName": "AppConsole",
-      "projectPath": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\AppConsole\\AppConsole\\AppConsole.csproj",
+      "projectPath": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\DESAFIO\\AppConsole\\AppConsole\\AppConsole.csproj",
       "packagesPath": "C:\\Users\\Ultimate_64\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\AppConsole\\AppConsole\\obj\\",
+      "outputPath": "C:\\Users\\Ultimate_64\\Desktop\\STONE\\DESAFIO\\AppConsole\\AppConsole\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
