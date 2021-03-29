@@ -103,6 +103,7 @@ namespace AppConsole {
                         }
                         list.RemoveAt(int.Parse(Console.ReadLine()));
                     }
+                    Console.Clear();
                 }
 
                 else if (opcao == 4) {
@@ -123,8 +124,17 @@ namespace AppConsole {
                         Console.WriteLine("Total Geral:" + somatorio);
                         Console.ReadLine();
                     }
+                    return;
+                    Console.Clear();
                 }
 
+                else if (opcao == 5) {
+                    Console.WriteLine("Sair");
+                }
+
+                else {
+                    Console.WriteLine("Opção inválida");
+                }
             }
 
         }
