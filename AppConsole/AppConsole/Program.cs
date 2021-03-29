@@ -29,8 +29,6 @@ namespace AppConsole {
                 List<Investimento> list = new List<Investimento>(); //Criação da lista a ser adicionada.
 
                 int s = 0;
-                int v = 0;
-                int t = 0;
 
                 if (opcao == 1) {
                     Console.WriteLine("Você digitou a opção:" + opcao
@@ -69,7 +67,7 @@ namespace AppConsole {
                     Console.WriteLine("Você digitou a opção:" + opcao
                             + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                             "\nPara prosseguir aperte 2 novamente"); 
-                    v = int.Parse(Console.ReadLine());
+                    s = int.Parse(Console.ReadLine());
 
                     while (s == 2) {
                         Console.WriteLine("Veja seu extrato a seguir:");
@@ -88,9 +86,9 @@ namespace AppConsole {
                     Console.WriteLine("Você digitou a opção:" + opcao
                            + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                            "\nPara prosseguir aperte 3 novamente"); 
-                    t = int.Parse(Console.ReadLine());
+                    s = int.Parse(Console.ReadLine());
 
-                    while (t == 3) {
+                    while (s == 3) {
 
                         Console.WriteLine("Qual ativo deseja remover?");
                         int indice = 1;
@@ -102,13 +100,31 @@ namespace AppConsole {
                                 + "; Valor Unitário: R$" + p.VUnit 
                                 + ";Total: R$" + p.VTotal);
                             indice++;
-
                         }
                         list.RemoveAt(int.Parse(Console.ReadLine()));
                     }
-
-
                 }
+
+                else if (opcao == 4) {
+                    Console.WriteLine("Você digitou a opção:" + opcao
+                          + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
+                          "\nPara prosseguir aperte 4 novamente");
+                    s = int.Parse(Console.ReadLine());
+
+                    while (s == 4) {
+
+                        double somatorio = 0;
+                        Console.WriteLine("O total de sua carteira digital é:");
+                        Console.WriteLine("Nome       |    Total");
+                        foreach (Investimento p in list) {
+                            Console.WriteLine(p.Nome + "                  " + p.VTotal);
+                            somatorio = somatorio + p.VTotal;
+                        }
+                        Console.WriteLine("Total Geral:" + somatorio);
+                        Console.ReadLine();
+                    }
+                }
+
             }
 
         }
