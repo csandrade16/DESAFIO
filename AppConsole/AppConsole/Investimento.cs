@@ -2,7 +2,7 @@
     class Investimento {
 
 
-        
+
         private double _somatorio; // Variavel do valor total investido
         public string Nome; // Variavel do nome do ativo
         public int Id { get; set; } // Identificação do ativo na lista
@@ -11,18 +11,15 @@
         public string DtHr { get; set; } // Variavel da data/hora do registro
         public double VTotal { get; set; } // Variavel do valor total do ativo
 
-       
+
+
         public Investimento() {
-           
+
+        }
+        public Investimento(string Nome, double qte, double VUnit, string DtHr) {
+
         }
         public Investimento(string Nome, double vtotal) {
-        }
-
-
-        public void AdicionarAtivos(string Nome, double qte, double VUnit, double _vTotal, string DtHr) {// Método adicionar ativos
-        }
-        public void RemoverAtivos(string Nome, double qte, double VUnit, double _vTotal) {// Método remover ativos
-
         }
     }
 }
