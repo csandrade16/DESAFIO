@@ -11,6 +11,13 @@
         public double VTotal { get; set; } // Variavel do valor total do ativo
         public int opcao { get; set; }
 
+        public Investimento() {
+
+        }
+
+        public Investimento(string Nome) {
+        }
+
         public string Adicionar() {
             return string.Format (
                 $"Nome: " + Nome + "; Quantidade:" + Qte +
@@ -38,17 +45,9 @@
                 "; Valor Unitário:" + VUnit + "; Valor Total =" + 
                 (Qte * VUnit) + " | " + DtHr + "\n");
         }
-
         public void ExtratonoConsole() {
             System.Console.WriteLine(Extrato());
         }
 
-
-        public Investimento() {
-
-
-        }
-        public Investimento(string Nome, int Qte, double VUnit, string DtHr) {
-        }
     }
 }
