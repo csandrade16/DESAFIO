@@ -9,6 +9,21 @@ namespace AppConsole {
 
             List<Investimento> listaativo = new List<Investimento>(); //Criação da lista a ser adicionada.
 
+            var ativo1 = new Investimento();
+            ativo1.Nome = "AAAA";
+            ativo1.Qte = 2;
+            ativo1.VUnit = 10;
+            ativo1.VTotal = ativo1.Qte * ativo1.VUnit;
+            ativo1.DtHr = Convert.ToString(DateTime.Now);
+            var ativo2 = new Investimento();
+            ativo2.Nome = "BAAA";
+            ativo2.Qte = 2;
+            ativo2.VUnit = 20;
+            ativo2.VTotal = ativo2.Qte * ativo2.VUnit;
+            ativo2.DtHr = Convert.ToString(DateTime.Now);
+            listaativo.Add(ativo1);
+            listaativo.Add(ativo2);
+
             while (opcao != 5) { //Fórmula quando o usuário digitar algo  errado
 
 
@@ -28,6 +43,8 @@ namespace AppConsole {
 
                 Console.WriteLine("Você digitou a opção:" + opcao); //Confirmação da opção desejada
                 Console.Clear();
+
+
 
                 int s = 0;
 

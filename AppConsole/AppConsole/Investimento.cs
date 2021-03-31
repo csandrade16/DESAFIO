@@ -46,11 +46,9 @@
 
         public Investimento() {
 
-        }
-        public Investimento(string Nome, double qte, double VUnit, string DtHr) {
 
         }
-        public Investimento(string Nome, double vtotal) {
+        public Investimento(string Nome, int Qte, double VUnit, string DtHr) {
         }
     }
 }
