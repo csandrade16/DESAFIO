@@ -7,7 +7,7 @@ namespace AppConsole {
         static void Main(string[] args) {
             int opcao = 0; //Variável para escolha do menu
 
-            List<Investimento> listap = new List<Investimento>(); //Criação da lista a ser adicionada.
+            List<Investimento> listaativo = new List<Investimento>(); //Criação da lista a ser adicionada.
 
             while (opcao != 5) { //Fórmula quando o usuário digitar algo  errado
 
@@ -19,7 +19,6 @@ namespace AppConsole {
 
                 Console.Write("Digite 1 - Para registrar a compra de um novo ativo na carteira\n" +
                         "Digite 2 - Para visualizar a lista de ativos investidos\n" +
-                        "Digite 3 - Para informar a venda de seus ativos\n" +
                         "Digite 3 - Para informar a venda de seus ativos\n" +
                         "Digite 4 - Visualizar um resumo do valor total investido em todos os ativos\n" +
                         "Digite 5 - Para sair de sua Carteira de Investimentos\n"); //Descrição das operações a serem escolhidas pelo usuário
@@ -33,35 +32,29 @@ namespace AppConsole {
                 int s = 0;
 
                 if (opcao == 1) {
+
                     Console.WriteLine("Você digitou a opção:" + opcao
                             + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                             "\nPara prosseguir aperte 1 novamente");
                     s = int.Parse(Console.ReadLine());
 
-                    Investimento p = new Investimento();
+                    Investimento ativo = new Investimento();
 
                     if (s == 1) {
 
                         Console.Clear();
                         Console.WriteLine("Digite o nome do ativo");
-                        p.Nome = Console.ReadLine();
+                        ativo.Nome = Console.ReadLine();
                         Console.WriteLine("Quantos deseja comprar?");
-                        p.Qte = int.Parse(Console.ReadLine());
+                        ativo.Qte = int.Parse(Console.ReadLine());
                         Console.WriteLine("Qual valor unitário?");
-                        p.VUnit = double.Parse(Console.ReadLine());
-                        p.DtHr = Convert.ToString(DateTime.Now);
+                        ativo.VUnit = double.Parse(Console.ReadLine());
+                        ativo.DtHr = Convert.ToString(DateTime.Now);
 
                         Console.WriteLine("Confirme as informações:");
-                        Console.WriteLine("Nome:"
-                                          + p.Nome
-                                          + "; Quantidade:"
-                                          + p.Qte
-                                          + "; Valor Unitário:"
-                                          + p.VUnit
-                                          + "; Valor Total ="
-                                          + p.Qte * p.VUnit
-                                          + "\n");
-                        listap.Add(p);
+
+                        ativo.ConfAdicionar();
+                        listaativo.Add(ativo);
                     }
                 }
 
@@ -75,8 +68,9 @@ namespace AppConsole {
                     if (s == 2) {
                         Console.WriteLine("Veja seu extrato a seguir:");
 
-                        foreach (Investimento p in listap) {
-                            Console.WriteLine("Nome:" + p.Nome + "; Quantidade:" + p.Qte + "; Valor Unitário: R$" + p.VUnit + ";Total: R$" + (p.Qte * p.VUnit) + "|" + p.DtHr);
+                        foreach (Investimento ativo in listaativo) {
+
+                            ativo.ExtratonoConsole();
                         }
                         Console.ReadLine();
                     }
@@ -91,17 +85,15 @@ namespace AppConsole {
                     if (s == 3) {
 
                         Console.WriteLine("Qual ativo deseja remover?");
-                        int indice = 1;
+                        
                         // Para cada ativo na minha lista
 
-                        foreach (Investimento p in listap) {
-                            Console.WriteLine("ID:" + indice + "Nome:" + p.Nome
-                                + "; Quantidade:" + p.Qte
-                                + "; Valor Unitário: R$" + p.VUnit
-                                + "; Total: R$" + (p.Qte * p.VUnit));
-                            indice++;
+                        foreach (Investimento ativo in listaativo) {
+                            int Id = 1;
+                            Id++;
+                            ativo.ConfRemover();                            
                         }
-                        listap.RemoveAt(int.Parse(Console.ReadLine()));
+                        listaativo.RemoveAt(int.Parse(Console.ReadLine()));
                     }
                     Console.ReadLine();
                 }
@@ -118,9 +110,9 @@ namespace AppConsole {
                         Console.WriteLine("O total de sua carteira digital é:");
                         Console.WriteLine("Nome       |    Total");
 
-                        foreach (Investimento p in listap) {
-                            Console.WriteLine(p.Nome + "                  " + p.Qte * p.VUnit);
-                            somatorio = somatorio + (p.Qte * p.VUnit);
+                        foreach (Investimento ativo in listaativo) {
+                            Console.WriteLine(ativo.Nome + "                  " + ativo.Qte * ativo.VUnit);
+                            somatorio = somatorio + (ativo.Qte * ativo.VUnit);
                         }
                         Console.WriteLine("Total Geral:" + somatorio);
                         Console.ReadLine();
