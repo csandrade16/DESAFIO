@@ -21,8 +21,8 @@ namespace AppConsole {
 
         public string Adicionar() {
             return string.Format (
-                $"Nome: " + Nome + "; Quantidade:" + Qte +
-                "; Valor Unitário: $" + VUnit + "; Valor Total = $" + (Qte * VUnit)) +" | "+ DtHr +"\n";
+                $"Nome: " + Nome + "; Quantidade: " + Qte +
+                "; Valor Unitário: $ " + VUnit + "; Valor Total = $" + (Qte * VUnit)) +" | "+ DtHr +"\n";
         }
 
         public void ConfAdicionar() {
