@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AppConsole {
-    class Program {
+     class Program {
         static void Main(string[] args) {
             int opcao = 0; //Variável para escolha do menu
 

@@ -1,5 +1,6 @@
-﻿namespace AppConsole {
-    class Investimento {
+﻿
+namespace AppConsole {
+    public class Investimento {
 
         private double _somatorio; // Variavel do valor total investido
 
