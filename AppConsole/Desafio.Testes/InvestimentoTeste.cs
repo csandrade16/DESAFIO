@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 
+
+
 namespace Desafio.Testes {
     [TestClass]
     public class InvestimentoTeste {
@@ -116,18 +118,20 @@ namespace Desafio.Testes {
             listaativo.Add(ativo2);
             listaativo.Add(ativo3);
 
-
+            listaativo.RemoveAt(2);
             string resultadoEsperado = ("Id: 1; Nome: STNE; Quantidade: 10; Valor Unitário: $ 10; Valor Total = $100 | " + ativo1.DtHr + "\n") +
-                                       ("Id: 2; Nome: GOOG; Quantidade: 2; Valor Unitário: $ 30; Valor Total = $60 | " + ativo2.DtHr + "\n") +
                                        ("Id: 3; Nome: PGRM; Quantidade: 2; Valor Unitário: $ 20; Valor Total = $40 | " + ativo3.DtHr + "\n");
 
             //Act
-            string resultadoAtual = "Id: " + ativo1.Id + "; Nome: " + ativo1.Nome + "; Quantidade: " + ativo1.Qte +
-                "; Valor Unitário: $ " + ativo1.VUnit + "; Valor Total = $" + ativo1.VTotal + " | " + ativo1.DtHr + "\n" +
-                "Id: " + ativo2.Id + "; Nome: " + ativo2.Nome + "; Quantidade: " + ativo2.Qte +
-                "; Valor Unitário: $ " + ativo2.VUnit + "; Valor Total = $" + ativo2.VTotal + " | " + ativo2.DtHr + "\n" +
-                "Id: " + ativo3.Id + "; Nome: " + ativo3.Nome + "; Quantidade: " + ativo3.Qte +
-                "; Valor Unitário: $ " + ativo3.VUnit + "; Valor Total = $" + ativo3.VTotal + " | " + ativo3.DtHr + "\n";
+            foreach (Investimento ativo in listaativo) {
+                Console.WriteLine(("Nome: " + ativo.Nome + "; Quantidade: " + ativo.Qte +
+                    "; Valor Unitário: $ " + ativo.VUnit + "; Valor Total = $" + ativo.VTotal + " | " + ativo.DtHr + "\n"));
+            }
+            string resultadoAtual = ("Id: "+ ativo1.Id+ "; Nome: " + ativo1.Nome + "; Quantidade: " + ativo1.Qte +
+                    "; Valor Unitário: $ " + ativo1.VUnit + "; Valor Total = $" + ativo1.VTotal + " | " + ativo1.DtHr + "\n") + 
+                    ("Id: " + ativo3.Id + "; Nome: " + ativo3.Nome + "; Quantidade: " + ativo3.Qte +
+                    "; Valor Unitário: $ " + ativo3.VUnit + "; Valor Total = $" + ativo3.VTotal + " | " + ativo3.DtHr + "\n");
+
 
             //Assert
             Assert.AreEqual(resultadoEsperado, resultadoAtual);
@@ -149,9 +153,7 @@ namespace Desafio.Testes {
             public double VTotal { get; set; } // Variavel do valor total do ativo
             public int opcao { get; set; }
 
-            public Investimento(string Nome, int Qte, double Vunit, double VTotal, string DtHr) {
-
-            }
+            
             public Investimento() {
 
             }
