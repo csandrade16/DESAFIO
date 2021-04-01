@@ -49,7 +49,7 @@ namespace AppConsole {
                         Console.WriteLine("Quantos deseja comprar?");
                         ativo.Qte = int.Parse(Console.ReadLine());
                         Console.WriteLine("Qual valor unitário? $");
-                        ativo.VUnit = double.Parse(Console.ReadLine());
+                        ativo.VUnit = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
                         ativo.DtHr = Convert.ToString(DateTime.Now);
 
 
@@ -129,6 +129,8 @@ namespace AppConsole {
                     Console.WriteLine("Opção inválida");
                 }
             }
+
+
 
         }
     }

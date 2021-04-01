@@ -22,7 +22,7 @@ namespace AppConsole {
         public string Adicionar() {
             return string.Format (
                 $"Nome: " + Nome + "; Quantidade: " + Qte +
-                "; Valor Unitário: $ " + VUnit + "; Valor Total = $" + (Qte * VUnit)) +" | "+ DtHr +"\n";
+                "; Valor Unitário: $ " + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2")) +" | "+ DtHr +"\n";
         }
 
         public void ConfAdicionar() {
@@ -33,7 +33,7 @@ namespace AppConsole {
             return string.Format(
                 "Id:"+ Id +
                 "Nome: " + Nome + "; Quantidade:" + Qte +
-                "; Valor Unitário: $" + VUnit + "; Valor Total = $" + (Qte * VUnit) + " | " + DtHr + "\n");
+                "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2") + " | " + DtHr + "\n");
         }
 
         public void ConfRemover() {
@@ -43,8 +43,8 @@ namespace AppConsole {
         public string Extrato() {
             return string.Format(
                 "Nome: " + Nome + "; Quantidade:" + Qte +
-                "; Valor Unitário: $" + VUnit + "; Valor Total = $" + 
-                (Qte * VUnit) + " | " + DtHr + "\n");
+                "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" + 
+                (Qte * VUnit).ToString("F2") + " | " + DtHr + "\n");
         }
         public void ExtratonoConsole() {
             System.Console.WriteLine(Extrato());
