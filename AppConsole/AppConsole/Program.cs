@@ -10,6 +10,7 @@ namespace AppConsole {
 
             List<Investimento> listaativo = new List<Investimento>(); //Criação da lista a ser adicionada.
 
+
             while (opcao != 5) { //Fórmula quando o usuário digitar algo  errado
 
 
@@ -30,6 +31,7 @@ namespace AppConsole {
                 Console.WriteLine("Você digitou a opção:" + opcao); //Confirmação da opção desejada
                 Console.Clear();
 
+
                 int s = 0;
 
                 if (opcao == 1) {
@@ -41,7 +43,7 @@ namespace AppConsole {
 
                     Investimento ativo = new Investimento();
 
-                    if (s == 1) {
+                    if (s == 1) { //Adicionar novo ativo
 
                         Console.Clear();
                         Console.WriteLine("Digite o nome do ativo");
@@ -64,7 +66,7 @@ namespace AppConsole {
                 }
 
 
-                else if (opcao == 2) {
+                else if (opcao == 2) { //Exibir extrato
                     Console.WriteLine("Você digitou a opção:" + opcao
                             + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                             "\nPara prosseguir aperte 2 novamente");
@@ -83,7 +85,7 @@ namespace AppConsole {
                         Console.WriteLine("Opção inválida");
                 }
 
-                else if (opcao == 3) {
+                else if (opcao == 3) { //Remover ativo da carteira
                     Console.WriteLine("Você digitou a opção:" + opcao
                            + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                            "\nPara prosseguir aperte 3 novamente");
@@ -98,7 +100,8 @@ namespace AppConsole {
                         foreach (Investimento ativo in listaativo) {
                             Console.WriteLine("Id:" + Id +
                             "Nome: " + ativo.Nome + "; Quantidade:" + ativo.Qte +
-                              "; Valor Unitário: $" + ativo.VUnit.ToString("F2") + "; Valor Total = $" + (ativo.Qte * ativo.VUnit).ToString("F2") + " | " + ativo.DtHr + "\n");
+                              "; Valor Unitário: $" + ativo.VUnit.ToString("F2") + "; Valor Total = $" + 
+                              (ativo.Qte * ativo.VUnit).ToString("F2") + " | " + ativo.DtHr + "\n");
                             Id++;
                         }
 
@@ -109,7 +112,7 @@ namespace AppConsole {
                     Console.ReadLine();
                 }
 
-                else if (opcao == 4) {
+                else if (opcao == 4) { //Exibir Saldo Total de Investimento
                     Console.WriteLine("Você digitou a opção:" + opcao
                           + "\nSe deseja cancelar, aperte 9;" + //Opção de retornar ao menu
                           "\nPara prosseguir aperte 4 novamente");
@@ -128,12 +131,12 @@ namespace AppConsole {
                         Console.WriteLine("Total Geral: $" + somatorio);
                         Console.ReadLine();
                     }
-                    else if (s != 9)
+                    else if (s != 9) //Opção para número inválido
                         Console.WriteLine("Opção inválida");
 
                 }
 
-                else if (opcao == 5) {
+                else if (opcao == 5) { // Opção Sair da aplicação
                     Console.WriteLine("Sair");
                 }
 
@@ -141,8 +144,6 @@ namespace AppConsole {
                     Console.WriteLine("Opção inválida");
                 }
             }
-
-
 
         }
     }

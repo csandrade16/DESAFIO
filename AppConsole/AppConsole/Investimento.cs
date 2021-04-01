@@ -15,14 +15,17 @@ namespace AppConsole {
         public Investimento() {
 
         }
+        public Investimento(string Nome, int Qte, double VUnit, string DtHt) {
+
+        }
 
         public Investimento(string Nome) {
         }
 
         public string Adicionar() {
-            return string.Format (
+            return string.Format(
                 $"Nome: " + Nome + "; Quantidade: " + Qte +
-                "; Valor Unitário: $ " + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2")) +" | "+ DtHr +"\n";
+                "; Valor Unitário: $ " + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2")) + " | " + DtHr + "\n";
         }
 
         public void ConfAdicionar() {
@@ -31,7 +34,7 @@ namespace AppConsole {
 
         public string Remover() {
             return string.Format(
-                "Id:"+ ++(Id) +
+                "Id:" + ++(Id) +
                 "Nome: " + Nome + "; Quantidade:" + Qte +
                 "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2") + " | " + DtHr + "\n");
         }
@@ -43,12 +46,21 @@ namespace AppConsole {
         public string Extrato() {
             return string.Format(
                 "Nome: " + Nome + "; Quantidade:" + Qte +
-                "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" + 
+                "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" +
                 (Qte * VUnit).ToString("F2") + " | " + DtHr + "\n");
         }
         public void ExtratonoConsole() {
             System.Console.WriteLine(Extrato());
         }
 
+
+
+        //Investimento ativo1 = new Investimento("STNE", 2, 62.16, Convert.ToString(DateTime.Now));
+        //Investimento ativo2 = new Investimento("CSCO", 1, 51.71, Convert.ToString(DateTime.Now));
+        //Investimento ativo3 = new Investimento("EBAY", 1, 62.50, Convert.ToString(DateTime.Now));
+
+        //listaativo.Add(ativo1);
+        //listaativo.Add(ativo2);
+        //listaativo.Add(ativo3);
     }
 }
