@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Collections.Generic;
-using System.Linq;
+
 
 namespace AppConsole {
      class Program {
@@ -9,8 +9,6 @@ namespace AppConsole {
             int opcao = 0; //Variável para escolha do menu
 
             List<Investimento> listaativo = new List<Investimento>(); //Criação da lista a ser adicionada.
-
-
 
             while (opcao != 5) { //Fórmula quando o usuário digitar algo  errado
 
@@ -50,7 +48,7 @@ namespace AppConsole {
                         ativo.Nome = Console.ReadLine();
                         Console.WriteLine("Quantos deseja comprar?");
                         ativo.Qte = int.Parse(Console.ReadLine());
-                        Console.WriteLine("Qual valor unitário?");
+                        Console.WriteLine("Qual valor unitário? $");
                         ativo.VUnit = double.Parse(Console.ReadLine());
                         ativo.DtHr = Convert.ToString(DateTime.Now);
 
@@ -118,7 +116,7 @@ namespace AppConsole {
                             Console.WriteLine(ativo.Nome + "                  " + ativo.Qte * ativo.VUnit);
                             somatorio = somatorio + (ativo.Qte * ativo.VUnit);
                         }
-                        Console.WriteLine("Total Geral:" + somatorio);
+                        Console.WriteLine("Total Geral: $" + somatorio);
                         Console.ReadLine();
                     }
                 }
