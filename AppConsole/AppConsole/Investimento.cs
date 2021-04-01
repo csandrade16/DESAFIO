@@ -31,7 +31,7 @@ namespace AppConsole {
 
         public string Remover() {
             return string.Format(
-                "Id:"+ Id +
+                "Id:"+ ++(Id) +
                 "Nome: " + Nome + "; Quantidade:" + Qte +
                 "; Valor Unitário: $" + VUnit.ToString("F2") + "; Valor Total = $" + (Qte * VUnit).ToString("F2") + " | " + DtHr + "\n");
         }

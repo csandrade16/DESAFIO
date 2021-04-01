@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 
 namespace AppConsole {
-     class Program {
+    class Program {
         static void Main(string[] args) {
             int opcao = 0; //Variável para escolha do menu
 
@@ -49,7 +49,7 @@ namespace AppConsole {
                         Console.WriteLine("Quantos deseja comprar?");
                         ativo.Qte = int.Parse(Console.ReadLine());
                         Console.WriteLine("Qual valor unitário? $");
-                        ativo.VUnit = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+                        ativo.VUnit = double.Parse(Console.ReadLine());
                         ativo.DtHr = Convert.ToString(DateTime.Now);
 
 
@@ -59,6 +59,8 @@ namespace AppConsole {
                         ativo.ConfAdicionar();
                         listaativo.Add(ativo);
                     }
+                    else if (s != 9)
+                        Console.WriteLine("Opção inválida");
                 }
 
 
@@ -77,6 +79,8 @@ namespace AppConsole {
                         }
                         Console.ReadLine();
                     }
+                    else if (s != 9)
+                        Console.WriteLine("Opção inválida");
                 }
 
                 else if (opcao == 3) {
@@ -87,16 +91,21 @@ namespace AppConsole {
 
                     if (s == 3) {
 
+                        int Id = 1;
                         Console.WriteLine("Qual ativo deseja remover?");
                         // Para cada ativo na minha lista
 
                         foreach (Investimento ativo in listaativo) {
-                            int Id = 1;
+                            Console.WriteLine("Id:" + Id +
+                            "Nome: " + ativo.Nome + "; Quantidade:" + ativo.Qte +
+                              "; Valor Unitário: $" + ativo.VUnit.ToString("F2") + "; Valor Total = $" + (ativo.Qte * ativo.VUnit).ToString("F2") + " | " + ativo.DtHr + "\n");
                             Id++;
-                            ativo.ConfRemover();
                         }
-                        listaativo.RemoveAt(int.Parse(Console.ReadLine()));
+
+                        listaativo.RemoveAt(int.Parse(Console.ReadLine())-1);
                     }
+                    else if (s != 9)
+                        Console.WriteLine("Opção inválida");
                     Console.ReadLine();
                 }
 
@@ -119,6 +128,9 @@ namespace AppConsole {
                         Console.WriteLine("Total Geral: $" + somatorio);
                         Console.ReadLine();
                     }
+                    else if (s != 9)
+                        Console.WriteLine("Opção inválida");
+
                 }
 
                 else if (opcao == 5) {
